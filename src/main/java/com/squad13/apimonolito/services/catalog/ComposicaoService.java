@@ -105,7 +105,7 @@ public class ComposicaoService {
 
         List<ItemAmbiente> itens = itemAmbienteRepository.findByAmbiente_Id(ambienteId);
         if (itens.isEmpty()) {
-            throw new ResourceNotFoundException("Nenhum associação de ambiente e item encontrado para o ambiente ID: " + ambienteId);
+            throw new ResourceNotFoundException("Nenhum associação de ambiente/item encontrado para o ambiente ID: " + ambienteId);
         }
 
         List<ComposicaoAmbiente> comps = itens.stream().map(item -> {
